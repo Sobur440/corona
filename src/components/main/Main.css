@@ -1,0 +1,938 @@
+@font-face {
+    font-family: insignia;
+    src: url("../fonts/Insignia.ttf");
+}
+@font-face {
+    font-family: lato;
+    src: url("../fonts/Lato-Medium.ttf");
+}
+
+@font-face {
+    font-family: futura;
+    src: url("../fonts/futura-medium-bt.ttf");
+}
+@font-face {
+    font-family: objectivity;
+    src: url("../fonts/Objectivity-Medium.otf");
+}
+
+
+
+.hero-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.covid-self-test {
+    background: #FEC327;
+    width: 11rem;
+    height: 3rem;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: lato;
+    cursor: pointer;
+    font-size: .9rem;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.covid-self-test::before {
+    content: "";
+    height: 100%;
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #c0a709;
+    border-radius: 30px;
+    z-index: -1;
+    transition: .7s;
+}
+
+.covid-self-test:hover::before {
+    width: 100%;
+}
+
+
+.stay-home {
+    font-size: 4rem;
+    font-family: futura, sans-serif;
+}
+
+
+.ugly-girl-img {
+    width: 25rem;
+    border-radius: 1rem;
+}
+
+.global-cases {
+    font-family: lato, sans-serif;
+    color: #C4C4C4;
+    font-size: 1rem;
+}
+
+.check-symptoms {
+    width: 12rem;
+    height: 3rem;
+    background: #073468;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-family: lato;
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 5rem;
+    box-shadow: 0 4px 5px rgba(44, 130, 230, 0.3);
+}
+
+.check-symptoms::before {
+    content: "";
+    background: #2C82E6;
+    position: absolute;
+    transition: .9s;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(2);
+}
+
+.check-symptoms:hover::before {
+    transform: scale(0);
+}
+
+.ugly-girl-container {
+    position: relative;
+}
+
+.ugly-girl-container::after {
+    content: url("../images/baby-face-mask.png");
+    position: absolute;
+    transform: scale(.3);
+    bottom: 0;
+    left: 13rem;
+    top: 18rem;
+    height: 15rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: .6rem;
+} 
+
+.ugly-girl-container::before {
+    content: url("../images/full-coro.png");
+    position: absolute;
+    transform: scale(.4);
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: .6rem;
+    left: -5rem;
+}
+
+.status-check-container {
+    align-self: flex-end;
+    margin-top: 4rem;
+}
+
+
+                           /* animations */
+
+.warning {
+    animation-name: warning-anim;
+    animation-duration: .5s;
+    animation-delay: .5s;
+    animation-timing-function: ease-in;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes warning-anim {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.ugly-girl-container {
+    animation-name: ugly-girl-anim;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    transform: translateX(1000%);
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes ugly-girl-anim {
+    0% {
+        transform: translateX(1000%);
+    }
+    90% {
+        transform: translateX(-60%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+                       /* animations end for now */
+
+
+.cases-amount {
+    font-size: 2rem;
+    font-family: objectivity, sans-serif;
+    margin-top: 3.5rem;
+}
+
+.status-check {
+    text-decoration: none;
+    color: #000;
+    font-family: lato, sans-serif;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.status-check::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #2C82E6;
+    right: 0;
+    height: 2px;
+    width: 0;
+    transition: 1s;
+}
+
+.status-check:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.countries {
+    display: flex;
+    width: 5000px;
+    margin-left: 1rem;
+    transition: 1s;
+}
+
+.corona-countries-container {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.first-arrow-container {
+    background: #2C82E6;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: .3rem;
+    cursor: pointer;
+}
+
+.first-arrow {
+    transform: scale(.3) rotate(-0.5turn);
+}
+.second-arrow-container {
+    background: #2C82E6;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: .3rem;
+    cursor: pointer;
+}
+
+.second-arrow {
+    transform: scale(.3);
+
+}
+
+.arrows-container {
+    display: flex;
+    margin: 1rem 3rem;
+}
+
+.corona-img {
+    width: 32rem;
+    height: 35rem;
+    border-radius: .5rem;
+    position: relative;
+    z-index: -1;
+}
+
+
+
+.about-corona {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.corona-img-container {
+    position: relative;
+    margin-right: 10rem;
+}
+
+.corona-img-container::before {
+    content: "";
+    position: absolute;
+    background: url("../images/african-woman-wearing-face-mask.png");
+    height: 50rem;
+    width: 50rem;
+    transform: scale(.3);
+    border-radius: 5rem;
+    z-index: 2;
+    left: 85px;
+    overflow: hidden;
+}
+
+.what-is-corona {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: futura, sans-serif;
+    margin-bottom: 3rem;
+}
+
+.answer {
+    color: #7a7a7a;
+}
+
+.meet-corona {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.how-corona-spread {
+    display: flex;
+    justify-content: space-evenly;
+    height: 37rem;
+    flex-wrap: wrap;
+}
+
+.how-novel-spread-corona-head {
+    font-size: 2rem;
+    font-family: futura, sans-serif;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.how-it-spread {
+    font-family: lato, sans-serif;
+    color: #8f8d8d;
+    margin-bottom: 1.3rem;
+    line-height: 1.5;
+}
+
+.how-novel-spread-corona-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-way {
+    align-self: center;
+    margin-right: 8rem;
+}
+
+.ways {
+    display: flex;
+}
+
+.way {
+    background: #fff;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.way-head {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: objectivity, sans-serif;
+} 
+
+.air-transmission::before {
+    content: url("../images/air.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: .8rem;
+}
+
+.way-body {
+    font-size: .8rem;
+    font-family: lato, sans-serif;
+    color: #7a7a7a;
+}
+
+.animal-contact::before {
+    content: url("../images/dog.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: .8rem;
+}
+
+.personal-contact::before {
+    content: url("../images/Vector.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: .8rem;
+}
+
+.surfaces-and-object::before {
+    content: url("../images/hand.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: .8rem;
+}
+
+.symptoms-container {
+    text-align: center;
+}
+
+.symptoms-img {
+    width: 60rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.symptoms-head {
+    font-size: 2.3rem;
+    font-family: futura, sans-serif;
+}
+
+.symptoms-sub-head {
+    font-family: lato, sans-serif;
+    font-size: 1.1rem;
+    color: #7a7a7a;
+}
+
+.protect-yourself-head {
+    font-size: 2.3rem;
+    font-family: futura, sans-serif;
+}
+
+
+.how-to-protect-yourself-body {
+    font-family: lato, sans-serif;
+    font-size: 1.1rem;
+    color: #7a7a7a;
+}
+
+.protect-yourself-container {
+    text-align: center;
+    margin: 2rem;
+}
+
+.protection {
+    background: #fff;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    padding: .3rem;
+}
+
+.protection-head {
+    font-size: .8rem;
+    font-weight: bold;
+    font-family: objectivity, sans-serif;
+}
+.protection-body {
+    font-size: .8rem;
+    font-family: lato, sans-serif;
+    color: #7a7a7a;
+}
+
+.ways-of-protecting-yourself {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.part-1 {
+    display: flex;
+}
+.part-2 {
+    display: flex;
+
+}
+
+.surface-cleaning::before {
+    content: url("../images/sanitizer.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.staying-home::before {
+    content: url("../images/Home.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.wearing-mask::before {
+    content: url("../images/nose_cover.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.hand-washing::before {
+    content: url("../images/wash_hand.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.nose-and-mouth-covering::before {
+    content: url("../images/sneezing.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-distancing::before {
+    content: url("../images/social_distance.png");
+    display: block;
+    transform: scale(.2);
+    height: 2rem;
+    margin-bottom: 3.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.here-to-help-img {
+    width: 50rem;
+}
+
+.helping-with-covid {
+    font-size: 2rem;
+    font-family: futura, sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+.another-here-to-help {
+    width: 55rem;
+    border-radius: 1rem;
+    height: 18rem;
+    background: #2C82E6;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-13rem);
+}
+
+.here-to-help-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.here-to-help-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.covid-global-cases {
+    color: #fff;
+    font-family: lato, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.1;
+}
+
+.here-to-help-btns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.another-check-symptoms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FEC327;
+    color: #fff;
+    width: 12rem;
+    height: 3rem;
+    text-decoration: none;
+    border-radius: .2rem;
+    margin: .4rem;
+}
+
+.find-health-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 12rem;
+    height: 3rem;
+    text-decoration: none;
+    border-radius: .2rem ;
+    width: 13rem;
+    height: 2.8rem;
+    margin: .4rem;
+}
+
+
+
+                         /* MEDIA QURIES */
+
+@media screen and (max-width: 960px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .corona-countries-container {
+        overflow-x: scroll;
+    }
+
+    .arrows-container {
+        display: none;
+    }
+
+    .about-corona {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meet-corona {
+        order: 1;
+        text-align: center;
+    }
+    .corona-img-container {
+        order: 2;
+        margin: 0 auto;
+    }
+
+
+
+    .what-is-corona {
+        font-size: 2.5rem;
+    }
+    .answer {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        font-family: lato, sans-serif;
+        line-height: 1.5;
+    }
+
+    .first-way {
+        align-self: flex-start;
+        margin-right: 2rem;
+    }
+
+    .how-corona-spread {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .how-novel-spread-corona-container {
+        text-align: center;
+    }
+
+    .how-novel-spread-corona-head {
+        font-size: 2.5rem;
+    }
+    .how-it-spread {
+        font-size: 1.2rem;
+    }
+
+    .symptoms-img {
+        width: 80%;
+    }
+
+    .here-to-help-img {
+        width: 40rem;
+    }
+    .another-here-to-help {
+        transform: translateY(-10rem);
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .part-1 {
+        flex-direction: column;
+    }
+    .part-2 {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .corona-img {
+        width: 100%;
+        height: 27rem;
+    }
+
+    .corona-img-container::before {
+        content: "";
+        position: absolute;
+        background: url("../images/african-woman-wearing-face-mask.png");
+        height: 50rem;
+        width: 50rem;
+        transform: scale(.25);
+        border-radius: 5rem;
+        z-index: 2;
+        left: -25%;
+        top: -98px;
+    }
+
+    .corona-img-container {
+        text-align: center;
+    }
+
+    .helping-with-covid {
+        font-size: 1.5rem;
+    }
+    .here-to-help-img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .ugly-girl-img {
+        width: 20rem;
+    }
+    .ugly-girl-container::after {
+        content: url("../images/baby-face-mask.png");
+        display: none;
+    } 
+    .ways {
+        flex-direction: column;
+        align-items: center;
+    }
+    .first-way {
+        align-self: center;
+        margin: 0;
+    }
+
+    .protection {
+        margin: 1rem 0;
+    } 
+    .ways-of-protecting-yourself {}
+
+    .corona-img {
+        width: 13rem;
+        height: 15rem;
+    }
+
+    .corona-img-container::before {
+        content: "";
+        position: absolute;
+        background: url("../images/african-woman-wearing-face-mask.png");
+        height: 50rem;
+        width: 50rem;
+        transform: scale(.15);
+        border-radius: 5rem;
+        z-index: 2;
+        left: -210px;
+        top: -230px;
+    }
+
+    .symptoms-head {
+        font-size: 1.7rem;
+    }
+
+    .how-to-protect-yourself-body {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .another-here-to-help {
+        text-align: center;
+    }
+
+    .helping-with-covid {
+        font-size: 1.1rem;
+    }
+
+    .covid-global-cases {
+        font-size: 1rem;
+    }
+    .here-to-help-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .another-check-symptoms {
+        margin: .6rem;
+        align-self: center;
+        width: 8rem;
+        font-size: .8rem;
+    }
+    .find-health-center {
+        margin: .6rem;
+        width: 9rem;
+        font-size: .8rem;
+    }
+    .what-is-corona {
+        font-size: 1.7rem;
+    }
+    .how-novel-spread-corona-head {
+        font-size: 1.7rem;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .ugly-girl-img {
+        width: 18rem;
+    }
+    .stay-home {
+        text-align: center;
+        font-size: 3rem;
+    }
+    .answer {
+        font-size: 1rem;
+    }
+    .how-it-spread {
+        font-size: 1rem;
+    }
+    .how-novel-spread-corona-head {
+        font-size: 1.2rem;
+    }
+    .what-is-corona {
+        font-size: 1.2rem;
+    }
+    .symptoms-head {
+        font-size: 1.2rem;
+    }
+    .symptoms-sub-head {
+        font-size: .8rem;
+    }
+    .protect-yourself-head {
+        font-size: 1.2rem;
+    }
+    .how-to-protect-yourself-body {
+        font-size: .6rem;
+    }
+}
+
+@media screen and (max-width: 388px) {
+    .another-here-to-help {
+        transform: translateY(-7rem);
+    }
+
+    .helping-with-covid {
+        font-size: 1rem;
+        margin: 0 1rem;
+    }
+
+    .covid-global-cases {
+        font-size: .8rem;
+    }
+    .here-to-help-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .another-check-symptoms {
+        margin: .5rem;
+        align-self: center;
+        width: 6rem;
+        font-size: .6rem;
+    }
+    .find-health-center {
+        margin: .5rem;
+        width: 8rem;
+        font-size: .6rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .ugly-girl-img {
+        width: 15rem;
+    }
+    .answer {
+        font-size: .8rem;
+    }    
+    .how-it-spread {
+        font-size: .8rem;
+    }
+
+    .corona-img {
+        width: 11rem;
+        height: 12rem;
+    }
+
+    .corona-img-container::before {
+        content: "";
+        position: absolute;
+        background: url("../images/african-woman-wearing-face-mask.png");
+        height: 50rem;
+        width: 50rem;
+        transform: scale(.1);
+        border-radius: 5rem;
+        z-index: 2;
+        left: -240px;
+        top: -260px;
+    }
+} 
