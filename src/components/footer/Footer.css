@@ -109,6 +109,46 @@
     margin: 1rem;
 }
 
+.developer {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.by {
+    color: #fff;
+    font-family: lato, sans-serif;
+    font-size: 1.25rem;
+}
+
+.pc-container {
+   align-self: center;
+}
+
+.pc {
+    text-decoration: none;
+    color: #fff;
+    margin-top: .4rem;
+    position: relative;
+}
+
+.pc::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    margin-top: 1px;
+    transition: .6s;
+}
+
+.pc:hover::after {
+    width: 100%;
+}
+
 @media screen and (max-width: 428px) {
     .first-footer {
         flex-direction: column;
@@ -116,4 +156,13 @@
     .second-footer {
         flex-direction: column;
     }
+    .halal {
+        display: block;
+        text-align: center;
+    }
+
+    .by {
+        font-size: 1rem;
+    }
+
 }
