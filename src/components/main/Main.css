@@ -691,6 +691,7 @@
         flex-direction: column;
         align-items: center;
         height: fit-content;
+        margin: 2rem;
     }
 
     .how-novel-spread-corona-container {
@@ -777,7 +778,7 @@
     .protection {
         margin: 1rem 0;
     } 
-    .ways-of-protecting-yourself {}
+
 
     .corona-img {
         width: 13rem;
@@ -936,3 +937,49 @@
         top: -260px;
     }
 } 
+
+@media screen and (max-width: 510px) {
+    .covid-global-cases {
+        font-size: 1rem;
+    }
+    .here-to-help-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .another-here-to-help {
+        text-align: center;
+    }
+
+    .helping-with-covid {
+        font-size: 1.1rem;
+    }
+    .ways {
+        flex-direction: column;
+        align-items: center;
+    }
+    .first-way {
+        align-self: center;
+        margin: 0;
+    }
+    .symptoms-head {
+        font-size: 1.8rem;
+    }
+    .corona-img {
+        width: 11rem;
+        height: 12rem;
+    }
+
+    .corona-img-container::before {
+        content: "";
+        position: absolute;
+        background: url("../images/african-woman-wearing-face-mask.png");
+        height: 50rem;
+        width: 50rem;
+        transform: scale(.1);
+        border-radius: 5rem;
+        z-index: 2;
+        left: -240px;
+        top: -260px;
+    }
+}

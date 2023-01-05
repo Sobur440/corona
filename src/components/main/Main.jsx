@@ -16,7 +16,6 @@ const Main = () => {
     //states
     
     const [index, setIndex] = useState(0)
-    const [translate, setTranslate] = useState([0, 20, 40, 60, 84])
     const [countries, setCountries] = useState([
         {
             name: "Nigeria",
@@ -115,7 +114,14 @@ const Main = () => {
         }
     ])
 
-
+    
+    
+    const translate = [0, 25, 50, 75]
+    let move = { transform: `translateX(-${translate[index]}%)` }
+    let color = {color: "#c4c4c4", fontFamily: "lato"}
+    const isMinus = /"-"/g
+    
+    
     // Function
 
     const handleNext = () => {
@@ -131,11 +137,6 @@ const Main = () => {
             setIndex(0)
           }
     }
-
-
-   let move = { transform: `translateX(-${translate[index]}%)` }
-   let color = {color: "#c4c4c4", fontFamily: "lato"}
-   const isMinus = /"-"/g
 
     return(
         <div className='main-container'>
