@@ -1,7 +1,7 @@
 import './Main.css'
 import { Link } from 'react-router-dom'
 import CoroCountries from './CoroCountries'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 //Cimages import 
 
@@ -14,9 +14,8 @@ import nurse from '../images/nurse.png'
 const Main = () => {
     
     //states
-    
-    const [index, setIndex] = useState(0)
-    const [countries, setCountries] = useState([
+    const countriesScroll = useRef()
+    const countries = [
         {
             name: "Nigeria",
             img: require("../images/nigeria.png"),
@@ -112,30 +111,30 @@ const Main = () => {
             img: require("../images/america.png"),
             cases: "192K"
         }
-    ])
+    ]
 
     
-    
-    const translate = [0, 25, 50, 75]
-    let move = { transform: `translateX(-${translate[index]}%)` }
     let color = {color: "#c4c4c4", fontFamily: "lato"}
-    const isMinus = /"-"/g
+
     
     
     // Function
 
     const handleNext = () => {
-        setIndex(prev => prev + 1)
-        if(index === translate.length - 1) {
-            setIndex(translate.length - 1)
-        }
+        countriesScroll.current.scrollBy({
+            top: 0,
+            left: 1000,
+            behavior: "smooth"
+        })
     }
 
     const handlePrev = () => {
-        setIndex(prev => prev - 1)
-        if(isMinus && index < 1) {
-            setIndex(0)
-          }
+        countriesScroll.current.scrollBy({
+            top: 0,
+            left: -1000,
+            behavior: "smooth"
+        })
+
     }
 
     return(
@@ -178,8 +177,8 @@ const Main = () => {
 
                            {/* ANOTHER-SECTION START */}
 
-            <div className='corona-countries-container'>
-                <div className="countries" style={move}>
+            <div className='corona-countries-container' ref={countriesScroll}>
+                <div className="countries">
                     {countries.map((country, index) => (
                         <CoroCountries key={index} country={country} />
                     ))}
@@ -322,7 +321,7 @@ const Main = () => {
                                <br /><br /><br />
 
                                {/* HOW TO PROTECT YOURSELF START */}
-
+                               
             <div className="protect-yourself-container">
                 <p className="protect-yourself-head">
                     HOW TO PROTECT YOURSELF
