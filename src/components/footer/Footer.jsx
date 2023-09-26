@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
            </div>
            <div className="developer">
-            <div className="by">Developed by Sobur Abubakar <span className='halal'>(D Halal Uchiha)</span></div>
+            <div className="by">Developed by Sobur Abubakar</div>
 {/*             <div className="pc-container"><a href="https://twitter.com/Wave440" target="_blank" className='pc'>buy me a pc</a></div> */}
            </div>
 
